@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>EstudandoTI Brasil – Materiais para Concursos</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: linear-gradient(145deg, #f4f9ff 0%, #e9f0f8 100%);
+            color: #1a2a3a;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+
+        /* container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 24px;
+        }
+
+        /* header / hero */
+        .hero {
+            background: linear-gradient(135deg, #003366 0%, #005c8a 100%);
+            border-radius: 0 0 40px 40px;
+            padding: 40px 20px 60px;
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            max-width: 180px;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.2));
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            letter-spacing: -0.5px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto 25px;
+        }
+
+        .btn-group {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            background: white;
+            color: #003366;
+            padding: 12px 28px;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.2s;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+            background: #ffeaac;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid white;
+            color: white;
+        }
+
+        .btn-outline:hover {
+            background: white;
+            color: #003366;
+        }
+
+        /* seções */
+        .section-title {
+            font-size: 2rem;
+            margin: 40px 0 20px;
+            text-align: center;
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: #003366;
+            margin: 10px auto 0;
+            border-radius: 4px;
+        }
+
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+            margin: 30px 0;
+        }
+
+        .card {
+            background: white;
+            border-radius: 28px;
+            padding: 24px;
+            width: 300px;
+            box-shadow: 0 12px 24px rgba(0,0,0,0.05);
+            transition: all 0.25s;
+            text-align: center;
+            border: 1px solid #e0e8f0;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 30px rgba(0,0,0,0.1);
+            border-color: #003366;
+        }
+
+        .card-icon {
+            font-size: 48px;
+            margin-bottom: 16px;
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            color: #003366;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            color: #4a5568;
+            margin-bottom: 20px;
+        }
+
+        .card .btn-small {
+            background: #003366;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            transition: 0.2s;
+        }
+
+        .card .btn-small:hover {
+            background: #005c8a;
+            transform: scale(1.02);
+        }
+
+        /* seção de destaque */
+        .highlight {
+            background: linear-gradient(120deg, #fff6e5, #fff0dd);
+            border-radius: 36px;
+            padding: 35px;
+            margin: 50px 0;
+            text-align: center;
+            border: 1px solid #ffdd99;
+        }
+
+        .highlight h3 {
+            font-size: 1.8rem;
+            color: #a35c00;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin: 30px 0;
+        }
+
+        .stat {
+            background: white;
+            border-radius: 40px;
+            padding: 20px 32px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #003366;
+        }
+
+        /* rodapé */
+        footer {
+            background: #0a2a3b;
+            color: #ccc;
+            text-align: center;
+            padding: 35px 20px;
+            margin-top: 60px;
+            border-radius: 30px 30px 0 0;
+        }
+
+        footer a {
+            color: #ffdd99;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* responsivo */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .btn-group { gap: 12px; }
+            .card { width: 100%; max-width: 320px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Cabeçalho / Hero -->
+<div class="hero">
+    <!-- Aqui você pode colocar sua logomarca; se tiver o arquivo logo.png na mesma pasta, o código carregará -->
+    <img src="logo.png" alt="Logo EstudandoTI" class="logo" onerror="this.style.display='none'">
+    <div style="font-size: 3rem; margin-bottom: 10px;">📚</div>
+    <h1>EstudandoTI Brasil</h1>
+    <p>Materiais completos e interativos para concursos públicos • Tribunais de Contas • Auditoria • Legislação</p>
+    <div class="btn-group">
+        <a href="#materiais" class="btn">📖 Ver materiais</a>
+        <a href="https://github.com/seu-usuario/simulado-600" target="_blank" class="btn btn-outline">📦 GitHub</a>
+        <a href="https://t.me/seucanal" target="_blank" class="btn btn-outline">💬 Comunidade</a>
+    </div>
+</div>
+
+<div class="container" id="materiais">
+    <div class="section-title">
+        📌 Materiais disponíveis
+    </div>
+    <div class="cards">
+        <div class="card">
+            <div class="card-icon">🎯</div>
+            <h3>Simulado 600 questões</h3>
+            <p>Lei 8.112, 14.133, LGPD, Improbidade, Processo Administrativo, CF/88. Interativo, com respostas comentadas.</p>
+            <a href="simulador_600.html" class="btn-small">📥 Acessar Simulado</a>
+        </div>
+        <div class="card">
+            <div class="card-icon">🧠</div>
+            <h3>Teoria + Dicas</h3>
+            <p>Material teórico completo para aprofundamento, com mapas mentais e dicas de estudo.</p>
+            <a href="teoria_auditoria.html" class="btn-small">📥 Baixar PDF</a>
+        </div>
+        <div class="card">
+            <div class="card-icon">📊</div>
+            <h3>Mapas mentais</h3>
+            <p>Resumos visuais em formato texto, diagramas e fluxogramas para fixação rápida.</p>
+            <a href="mapas_mentais.html" class="btn-small">📥 Ver Mapas</a>
+        </div>
+        <div class="card">
+            <div class="card-icon">⚡</div>
+            <h3>Flashcards</h3>
+            <p>Perguntas e respostas curtas para revisão rápida – ideal para celular.</p>
+            <a href="flashcards.html" class="btn-small">📥 Iniciar</a>
+        </div>
+    </div>
+
+    <div class="highlight">
+        <h3>🔥 Material interativo que funciona offline</h3>
+        <p>Baixe os arquivos e utilize em qualquer lugar – não depende de internet após o download.<br>
+        Compatível com Chrome, Edge, Firefox e também com impressão (PDF).</p>
+        <div class="stats">
+            <div class="stat"><div class="stat-number">600+</div>Questões comentadas</div>
+            <div class="stat"><div class="stat-number">6</div>Leis atualizadas</div>
+            <div class="stat"><div class="stat-number">100%</div>Interativo</div>
+        </div>
+    </div>
+
+    <div class="section-title">
+        📢 Siga e compartilhe
+    </div>
+    <div style="text-align: center; margin-bottom: 30px;">
+        <p>🔹 Instagram: @marcoa_siqueira</p>
+        <p>🔹 TikTok: @trilha_dos_saberes</p>
+        <p>🔹 Twitter / X: @EstudandoTI</p>
+    </div>
+</div>
+
+<footer>
+    <p>© 2026 EstudandoTI Brasil – Marco Aurélio Siqueira</p>
+    <p>Material desenvolvido com dedicação para sua aprovação. Reprodução autorizada com créditos.</p>
+    <p><a href="#">Voltar ao topo ↑</a></p>
+</footer>
+
+</body>
+</html>
